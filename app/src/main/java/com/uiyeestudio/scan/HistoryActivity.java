@@ -1,12 +1,18 @@
 package com.uiyeestudio.scan;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -32,6 +38,10 @@ public class HistoryActivity extends AppCompatActivity {
     private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> commodityData = new ArrayList<>();
     private DaoSession daoSession;
+
+    private View decorView;
+    private float downX, downY;
+    private float screenWidth, screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +78,59 @@ public class HistoryActivity extends AppCompatActivity {
 
         daoSession = ScanApplication.getInstance().getDaoSession();
         buildCommodityData();
+
+        decorView = getWindow().getDecorView();
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        screenWidth = metrics.widthPixels;
+        screenHeight = metrics.heightPixels;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            downX = event.getX();
+        } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+            float moveDistanceX = event.getX() - downX;
+            if (moveDistanceX > 0) {
+                decorView.setX(moveDistanceX);
+            }
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            float moveDistanceX = event.getX() - downX;
+            if (moveDistanceX > screenWidth/2) {
+                continueMove(moveDistanceX);
+                finish();
+            } else {
+                // decorView.setX(0);
+                backToLeft(moveDistanceX);
+            }
+        }
+        return super.onTouchEvent(event);
+    }
+
+    private void continueMove(float moveDistanceX) {
+        final ValueAnimator anim = ValueAnimator.ofFloat(moveDistanceX, screenWidth);
+        anim.setDuration(1000);
+        anim.start();
+
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                float x = (float) anim.getAnimatedValue();
+                decorView.setX(x);
+            }
+        });
+
+        anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                finish();
+            }
+        });
+    }
+
+    private void backToLeft(float moveDistanceX) {
+        ObjectAnimator.ofFloat(decorView, "X", moveDistanceX, 0).setDuration(300).start();
     }
 
     private void initActionBar() {
