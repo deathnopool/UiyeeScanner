@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uiyeestudio.scan.scanwithinput.com.uiyee.uiyeescan.CommodityDetailActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@color/white"
+            app:title="@string/title_activity_detail"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/img_detail_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="50dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/commodity"
+                        android:textColor="@color/light_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+
+                    <TextView
+                        android:id="@+id/text_detail_title"
+                        android:text="hello world"
+                        android:longClickable="true"
+                        android:focusable="true"
+                        android:textIsSelectable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/CommodityDetailStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/price_we_got"
+                        android:textColor="@color/light_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+
+                    <TextView
+                        android:text="@string/item_rmb_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle" />
+
+                    <TextView
+                        android:id="@+id/text_detail_price"
+                        android:text="hello world"
+                        android:longClickable="true"
+                        android:focusable="true"
+                        android:textIsSelectable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/item_barcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/light_black"
+                        style="@style/CommodityDetailStyle"/>
+
+                    <TextView
+                        android:id="@+id/text_detail_barcode"
+                        android:text="hello world"
+                        android:longClickable="true"
+                        android:focusable="true"
+                        android:textIsSelectable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/shop"
+                        android:textColor="@color/light_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+
+                    <TextView
+                        android:id="@+id/text_detail_shopName"
+                        android:text="hello world"
+                        android:longClickable="true"
+                        android:focusable="true"
+                        android:textIsSelectable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/taobao_url"
+                        android:textColor="@color/light_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/CommodityDetailStyle"/>
+
+                    <TextView
+                        android:id="@+id/text_detail_url"
+                        android:text="hello world"
+                        android:autoLink="web"
+                        android:ellipsize="end"
+                        android:longClickable="true"
+                        android:focusable="true"
+                        android:textIsSelectable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/CommodityDetailStyle"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.uiyeestudio.scan.scanwithinput.com.uiyee.uiyeescan.HomeActivity"
+    tools:showIn="@layout/activity_home">
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Btn_to_continuous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="这是虾米"/>
+
+        <Button
+            android:id="@+id/Btn_to_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="这又是虾米"
+            />
+
+        <Button
+            android:id="@+id/Btn_to_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="来人"/>
+
+    </LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/activity_home_linearLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

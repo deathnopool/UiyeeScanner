@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uiyeestudio.scan.CustomScannerActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/barcode_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                android:id="@+id/zxing_barcode_scanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:zxing_scanner_layout="@layout/custom_barcode_scanner">
+            </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+            <TextView
+                android:id="@+id/barcode_text_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tap_to_continue_scan"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:background="@color/zxing_transparent"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/barcode_edit_text"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/enter_barcode"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/barcode_query"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="@string/search"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:textSize="16sp"/>
+
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/list_commodity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:minHeight="0dp">
+            </ListView>
+
+            <TextView
+                android:id="@+id/barcode_empty"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:text="@string/empty_result"
+                android:textSize="20dp"
+                android:textColor="@color/light_black"/>
+
+            <!--<TextView
+                android:id="@+id/test_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

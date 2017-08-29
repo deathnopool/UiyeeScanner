@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">幽扫</string>
+    <string name="title_activity_continuous">ContinuousActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_detail">商品详情</string>
+    <string name="title_activity_history">扫描历史</string>
+
+
+    <string name="tap_to_continue_scan">点击继续扫描</string>
+    <string name="enter_barcode">输入条形码</string>
+    <string name="search">搜 索</string>
+    <string name="empty_result">数据菌太傲娇\n不肯过来...</string>
+
+    <string name="item_title">名称：</string>
+    <string name="item_price">价格：</string>
+    <string name="item_rmb_sign">￥</string>
+    <string name="item_barcode">条形码：</string>
+
+    <string name="commodity_info">商品信息</string>
+    <string name="nothing_more">没有更多了...</string>
+
+    <string name="commodity">商品：</string>
+    <string name="price_we_got">参考价格：</string>
+    <string name="shop">商铺：</string>
+
+    <string name="history_empty">虾米都没有~~~</string>
+
+    <string name="loading">加载中...</string>
+
+    <string name="menu_history_title">扫描记录</string>
+
+    <string name="taobao_url">淘宝链接：</string>
+
+    <string name="menu_clear_history">清空</string>
+
+</resources>
