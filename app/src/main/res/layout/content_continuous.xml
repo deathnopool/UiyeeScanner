@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.uiyeestudio.scan.scanwithinput.com.uiyee.uiyeescan.ContinuousScanActivity"
+    tools:context="com.uiyeestudio.scan.ContinuousScanActivity"
     tools:showIn="@layout/activity_continuous">
 
 </android.support.constraint.ConstraintLayout>

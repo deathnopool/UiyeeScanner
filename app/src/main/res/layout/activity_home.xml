@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uiyeestudio.scan.scanwithinput.com.uiyee.uiyeescan.HomeActivity">
+    tools:context="com.uiyeestudio.scan.HomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

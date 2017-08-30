@@ -17,9 +17,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "COMMODITY_URL", "\"\""
+            buildConfigField "String", "TB_ITEM_URL", "\"https://detail.tmall.com/item.htm\""
+            buildConfigField "String", "TB_ITEM_PIC_URL","\"https://img.alicdn.com/imgextra/\""
         }
         debug {
-            
+            buildConfigField "String", "COMMODITY_URL", "\"\""
+            buildConfigField "String", "TB_ITEM_URL", "\"https://detail.tmall.com/item.htm\""
+            buildConfigField "String", "TB_ITEM_PIC_URL","\"https://img.alicdn.com/imgextra/\""
         }
     }
     greendao {
